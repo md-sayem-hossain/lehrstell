@@ -27,7 +27,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/motivation-sschreiben/motivation.module')
       .then(m => m.MotivationModule),
   },
-
+  {
+    path: 'bewerbungsgesprach_vorbereiten',
+    loadChildren: () => import('./modules/bewerbungsgesprach_vorbereiten/bewerbungsgesprach.module')
+      .then(m => m.bewerbungsgesprach),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
   {
