@@ -1,0 +1,208 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+<div class="second-step">
+    <div class="full-content ">
+        <!-- School -->
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-1-3">
+                <span class="small-heading">
+                    Schulbildung
+                </span>
+            </div>
+        </div>
+        <ng-container *ngFor="let scholl of commonService.schooling;let i = index">
+            <div class="row">
+                <div class="col-0-5">
+                    <label for="Last" class="label-float-right" style="float: left !important;">Von</label>
+                </div>
+                <div class="col-0-7">
+                    <select data-placeholder="" [(ngModel)]="scholl.von" style="height: 24px !important;">
+                        <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                    </select>
+                </div>
+
+                <div class="col-0-5">
+                    <label for="First" class="label-float-right">Bis</label>
+                </div>
+                <div class="col-0-7">
+                    <select data-placeholder="" [(ngModel)]="scholl.bis" style="height: 24px !important;">
+                        <option value="heute">heute</option>
+                        <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                    </select>
+                </div>
+
+                <div class="col-1">
+                    <label for="First" class="label-float-right">Schule</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" placeholder="Sekundarschule Kirchbühl" [(ngModel)]="scholl.schule" id="First"
+                        class="col-9 " name="First" />
+                </div>
+
+                <div class="col-0-7">
+                    <label for="Job" class="label-float-right">Ort</label>
+                </div>
+                <div class="col-3">
+                    <input type="text" [(ngModel)]="scholl.ort" id="Job" class="col-9" name="Job" />
+                </div>
+                <!-- <div class="col-1" *ngIf="i==0" style="margin-right: 17px;"></div> -->
+                <div class="col-1">
+                    <span *ngIf="i!=0" class="clickable  delete-text" (click)="deleteSchulbildungObj(i)">&#10060;
+                        Löschen</span>
+                    <!-- <span  class="clickable delete-text" (click)="deleteSchulbildungObj(i)"></span> -->
+                </div>
+            </div>
+
+        </ng-container>
+        <div class="row">
+            <div class="plus-icon clickable margin-top-0" (click)="addSchooling()"> </div>
+            <span class="mt-0-6 icon-after-text clickable" (click)="addSchooling()"> Schule hinzufügen </span>
+        </div>
+        <!-- Language -->
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading">
+                    Sprachen
+                    <div class="info-Box-line3"> 
+                       <p>
+                        <!-- Klicke in die Felder und wähle aus oder schreibe direkt in beide Felder hinein. -->
+                        Klicke in die Felder und wähle aus oder schreibe direkt in beide Felder hinein oder lösche den Text mit der Zurück-Taste.
+                       </p>  
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="left-language-side" style="width: 480px;">
+                <ng-container *ngFor="let language of commonService.languages ;let i = index" >
+                    <div class="row">
+                        <!-- <div style="width: 48%;"> -->
+                        <div class="col-3">
+                            <input type="text" list="language" [(ngModel)]="language.language"  id="mytext2" placeholder="Wähle aus..." onfocus="this.value=''" onchange="this.blur();" />
+                            <datalist id="language">
+                                <option>Deutsch</option>
+                                <option>Englisch</option>
+                                <option>Französisch</option>
+                                <option>Italienisch</option>
+                            </datalist>
+                        </div>
+                        <style>
+                            .btn{
+                                display: inline-block;
+                                font-weight: 400;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                border: 1px solid transparent;
+                                padding: 0.300rem 0.55rem;
+                                 line-height: 1;
+                                border-radius: 0.25rem;
+                                cursor: pointer;
+                                background-color: transparent;
+                             }
+                        </style>
+                        <!-- <div style="width: 100%;"> -->
+                        <div style=" " class="col-6">
+                            <div style="display: flex; align-items:center;">
+                                <input type="text" list="languageType" id="mytext" [(ngModel)]="language.type" style="width: 100% !important;" placeholder="Wähle aus ..." onfocus="this.value=''" onchange="this.blur();" />
+                                
+                                <!-- <button class="btn" onclick="document.getElementById('mytext').value = '';document.getElementById('mytext2').value = '';" style="margin-left: 5px;">❌ Löschen</button> -->
+                            </div>
+                            
+                                <datalist id="languageType"  class="js-example-tags">
+                                <option>Erstsprache</option>
+                                <option>Schulkenntnisse (ab 2. Schuljahr)</option>
+                                <option>Schulkenntnisse (ab 3. Schuljahr)</option>
+                                <option>Schulkenntnisse (ab 4. Schuljahr)</option>
+                                <option>Schulkenntnisse (ab 5. Schuljahr)</option>
+                                <option>Schulkenntnisse (ab 6. Schuljahr)</option>
+                                <option>Schulkenntnisse (ab 7. Schuljahr)</option>
+                            </datalist> 
+                             
+                            
+                            
+                        </div>
+                        
+                        <div *ngIf="i!=0" style="width: 30px;">
+                            <span class="clickable" style="margin-left: 15px;" (click)="deleteLanguageObj(i)">&#10060;</span>
+                            <span class="clickable delete-text" (click)="deleteLanguageObj(i)">Löschen</span>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="row">
+                    <div class="plus-icon clickable margin-top-0" (click)="addlanguage()"> </div>
+                    <span class="mt-1-5 icon-after-text clickable" (click)="addlanguage()"> Sprache hinzufügen </span>
+                </div>
+            </div>
+            <!-- <div class="right-language-side">
+                <div style="width: 224.7px;">
+                    
+                </div>
+            </div> -->
+        </div>
+
+
+        <!-- Hobbys -->
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading">
+                    Hobbys
+                    <div class="info-Box-line3"> 
+                        <p>
+                            In der Regel führt man zwei Hobbys auf. Falls du nur ein Hobby hast, dann klicke unten auf Löschen.
+                        </p>  
+                     </div>
+                </span>
+            </div>
+        </div>
+        <ng-container *ngFor="let hobby of commonService.hobbys;let i = index">
+            <div class="row">
+                <div class="col-2-5">
+                    <input type="text" placeholder="{{hobby.leftBoxPlaceHolder}}" class="" [(ngModel)]="hobby.name"  [maxlength]="19" />
+                </div>
+                <div class="col-8">
+                    <textarea id="description" placeholder="{{hobby.rightBoxPlaceHolder}}" [maxlength]="60"
+                        name="comment-area" [(ngModel)]="hobby.description" rows="3"></textarea>
+                    <span *ngIf="i>0" class="clickable" (click)="deleteHobbyObj(i)"> &nbsp;&nbsp; &#10060;</span>
+                    <span *ngIf="i>0" class="clickable delete-text" (click)="deleteHobbyObj(i)">Löschen</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="row">
+            <div class="plus-icon clickable" (click)="addHobby()"> </div>
+            <span class="icon-after-text clickable" (click)="addHobby()"> Hobby hinzufügen </span>
+        </div>
+
+        <div class="mb-10"></div>
+        <div class="mb-10"></div>
+    </div>
+</div>
+<!-- <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">weiter</a> -->
+
+
+<a class="next-btn back-btn" (click)="onBack()" style="background-color: white; z-index: 333333; position: fixed;bottom: 40%;margin-left: 4%; z-index: 1561561;">zurück</a>
+
+<a class="next-btn" (click)="onNext()" style=" z-index: 222222222; position: fixed;bottom:40%;margin-right: 4%;">weiter</a>
+
+
+
+
+   
+ 
+ 
+

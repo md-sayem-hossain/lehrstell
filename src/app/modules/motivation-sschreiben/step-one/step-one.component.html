@@ -1,0 +1,122 @@
+<div class="first-step">
+    <div class="left-side">
+        <form [formGroup]="msPersonalForm">
+            <div class="row">
+                <div class="col-100">
+                    <span class="small-heading grey-color">
+                        <span class="underline">Klicke</span> die richtigen Felder an und <span
+                            class="underline">fülle</span> die leeren Kästchen mit
+                        deinen Informationen aus.
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="fname" class="">Dein Vorname</label>
+                </div>
+                <div class="col-7">
+                    <input formControlName="firstName" type="text" id="fname" class="" name="fname"
+                        placeholder="Mike" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="lname" class="">Dein Nachname</label>
+                </div>
+                <div class="col-7">
+                    <input formControlName="lastName" type="text" id="lname" class="" name="lname"
+                        placeholder="Muster" />
+                </div>
+            </div>
+
+            <div class="mb-10"></div>
+
+            <div class="row">
+                <div class="col-1-3">
+                    <span class="small-heading">
+                        Adresse
+                    </span>
+                </div>
+            </div>
+
+    
+
+<!-- =========================== -->
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="Street" class="">Strasse</label>
+                </div>
+                <div class="col-3">
+                    <input formControlName="street" type="text" id="Street" class="width-100" name="Street"
+                    placeholder="Musterstrasse" />
+                 </div>
+
+                <div class="col-1" style="margin-left: 2px;">
+                    <label for="number" class="label-float-right">Nummer</label>
+                </div>
+                <div class="col-0-8">
+                    <input formControlName="number"  type="text" id="number" class=""
+                        name="number" placeholder="10" /> 
+                </div>
+            </div>
+
+<!-- ======================== -->
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="zip" class="">PLZ</label>
+                </div>
+                <div class="col-1">
+                    <input formControlName="zip" type="text" id="zip" class="width-100" name="zip" placeholder="6005" />
+                </div>
+
+                <div class="col-1">
+                    <label for="place" class="ml-60 ">Ort</label>
+                </div>
+                <div class="col-3-9">
+                    <input formControlName="place" type="text" id="place" class="width-64-5" name="place"
+                        placeholder="Luzern" />
+                </div>
+            </div>
+
+            <div class="mb-10"></div>
+
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="Mail" class="">E-Mail Adresse</label>
+                </div>
+                <div class="col-7">
+                    <input formControlName="email" type="text" id="Mail" class="" name="Mail"
+                        placeholder="mikemuster@mail.ch" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1-3">
+                    <label for="mobile" class="">Telefon</label>
+                </div>
+                <div class="col-7">
+                    <!-- <input formControlName=" " type="text" (keypress)="numericOnly($event)" id="mobile" class=""
+                        name="mobile" placeholder="077 491 24 04" /> -->
+                    <input formControlName="mobile" type="text" (keypress)="numericOnly($event)" id="mobile" class=""
+                        name="mobile" placeholder="077 491 24 04" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<div class="mb-30"></div>
+<!-- <a class="next-btn" (click)="onNext()">weiter</a> -->
+
+<a class="next-btn" (click)="onNext()" style=" z-index: 222222222; position: fixed;bottom:40%;margin-right: 4%;">weiter</a>
+   
+ 
+ 

@@ -1,0 +1,135 @@
+<div class="home-content" style="zoom: 0.9;">
+
+
+  <div class="container">
+    <div class="row" style="margin-left: -15%;display: flex;align-items: center;justify-content: center;">
+      <div class="col-md-4" >
+        <div class="home-img" style="margin: auto; text-align: right;     margin-right: 35px;">
+          <img src="assets/images/userpc.png" alt="" style="width: 55%;">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="buttons">
+          <div class="btns">
+          <div class="cv-btns">
+            <a class="create-cv-btn" (click)="navigateTo('/cv-generator')">
+              Lebenslauf erstellen
+            </a>
+            <p id="myBtn" onclick="modelOnClick()" style="text-decoration: underline;  font-size: 10px !important;"> Beispiel Lebenslauf</p>
+
+          </div>
+          <div class="cv-btns">
+            <a class="create-cv-btn" (click)="navigateTo('/motivation-sschreiben')">
+              Motivationsschreiben erstellen
+            </a>
+            <p id="myBtn2" onclick="modelOn2Click()" style="text-decoration: underline;     font-size: 10px !important;">Beispiel Motivationsschreiben
+            </p>
+          </div>
+          <div class="cv-btns">
+            <a class="create-cv-btn" (click)="navigateTo('/bewerbungsgesprach_vorbereiten')">
+              Bewerbungsgespräch vorbereiten
+            </a>
+          </div>
+
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </div><button id="myBtn3" onclick="modelOn3Click()" hidden></button>
+
+  <div class="container">
+    <div class="row" style="display: block; text-align: center; margin: auto;">
+       <div class="col ">
+        <div class="center">
+           <div class="home-text" style="margin-top: 25px;">
+          <h3 style="font-size: 16px !important; color: #929090; margin: 0px;">Erstelle deine Bewerbungsunterlagen einfach, schnell und ohne Hilfe!</h3>
+          <div class="line-home" style="border-bottom: 2px solid #a0a0a0; margin: auto; width: 70%;  margin-top: 0px;  margin-bottom: 5px;"></div>
+          <p style="font-size: 10px !important; color: gray;">Download der Dokumente als Word und Pdf - Dateien möglich</p>
+          <h4 class="bottom-text" style="font-size: 14px !important;margin-top: 0%;">
+            Wichtig: Auf unserer Website werden keine Daten gespeichert oder an Dritte weitergegeben!
+          </h4>
+        </div>
+      </div>
+       
+      </div>
+     </div>
+  </div>
+
+  <!-- <div class="btns">
+        <div class="cv-btns">
+             <a class="create-cv-btn" (click)="navigateTo('/cv-generator')">
+            Lebenslauf erstellen 
+        </a>
+        <p id="myBtn" onclick="modelOnClick()" style="text-decoration: underline;"> Beispiel Lebenslauf</p>
+
+         </div>
+        <div class="cv-btns">
+             <a class="create-cv-btn" (click)="navigateTo('/motivation-sschreiben')">
+            Motivationsschreiben erstellen
+        </a>
+        <p id="myBtn2" onclick="modelOn2Click()" style="text-decoration: underline;">Beispiel Motivationsschreiben</p>
+       </div> 
+       
+       
+    </div>  -->
+
+  <!-- <div class="btns">
+     
+      <div class="cv-btns">
+           <a class="create-cv-btn" (click)="navigateTo('/bewerbungsgesprach_vorbereiten')">
+            Bewerbungsgespräch vorbereiten
+      </a>
+      </div>
+
+  </div>
+     
+
+  <div class="down-div" style="    margin-bottom: 10%;">
+      <p style="margin-left: -10px;">Lebenslauf, Motivationsschreiben und Bewerbungsfragen als</p>
+      <img src="assets/images/pdfandwordicon.png" alt="image" width="60" style="margin-left: -10px;">
+      <h4>DOWNLOADEN</h4>
+  </div> -->
+
+
+
+</div>
+
+
+<!-- <div class="cv-generator" *ngIf="isShowCookiesContainer"> -->
+  <div class="cv-generator" *ngIf="isShowCookiesContainer">
+  <div class="content"
+    style="width: 20%;height: auto;border-radius: 10px;background-color: #fff;position: fixed;top: 30%;right: 40px;z-index: 222222;">
+    <div (click)="crossClick()" class="clickable" style="text-align: right; margin-top: -20px; margin-right: -20px;">
+      <img src="assets/images/red cross.png" width="40">
+    </div>
+    <div class="alert-box">
+      <b>Der Schutz deiner Daten ist uns wichtig</b>
+      <p align="justify" style="margin-top: 20px;">
+        Wir verwenden Cookies zur Unterstützung der Benutzerfreundlichkeit, damit man den Lebenslauf und das
+        Motivationsschreiben erstellen kann. Mit Wegklicken dieses Fensters, stimmst du der Cookie-Nutzung zu. <u
+          class="clickable" (click)="navigateTo('/datenschutzerklärung')">Datenschutzerklärung</u></p>
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal" onclick="modelOffClick()">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="modelOffClick()">&times;</span>
+    <img src="assets/images/basic-cv-template.jpg" alt="">
+    <!-- <span class="close2" onclick="modelOffClick()">&times;</span> -->
+  </div>
+</div>
+
+<div id="myModal2" class="modal" onclick="modelOff2Click()">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="modelOff2Click()">&times;</span>
+    <img src="assets/images/demo-letter.jpg" alt="">
+    <!-- <span class="close2" onclick="modelOffClick()">&times;</span> -->
+  </div>
+</div>
+

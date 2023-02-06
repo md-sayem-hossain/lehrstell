@@ -1,0 +1,80 @@
+<div class="first-step">
+    <div class="motivation-container">
+        <style>
+    
+            .first-step{
+                display: block !important;
+            }
+            .ques_col{
+                font-family: 'Open Sans', sans-serif;
+                font-weight: bold;
+            }
+            </style>
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading grey-color">
+                 </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-100">
+                <label class="grey-color">
+                 </label>
+            </div>
+        </div>
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="ques_col">7) Warum hast du dich für diese Firma entschieden?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepThreeData3.textArea4" class="col-100"
+                    name="comment-area" rows="4"
+                    placeholder={{commonService.lehrStepThreeData3.textArea4PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="ques_col">8) Kannst du erklären, was die Firma macht? (Produkte, Dienstleistungen)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepThreeData3.textArea5" class="col-100"
+                    name="comment-area" rows="4"
+                    placeholder={{commonService.lehrStepThreeData3.textArea5PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="ques_col">9) Welche Schnupperlehren hast du bis jetzt absolviert? Was hat dir gefallen und was nicht?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepThreeData3.textArea6" class="col-100"
+                    name="comment-area" rows="4"
+                    placeholder='Ich habe bereits 4 Schnupperlehren gemacht:&#10;Positiv fand ich: Kundenkontakt, Team, Abwechslung.&#10;Negativ fand ich: Bei zwei Betrieben durfte ich den ganzen Tag fast nur zusehen und nichts selber machen.'></textarea>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+    </div>
+
+</div>
+<div class="mb-20"></div>
+<!-- <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">weiter</a> -->
+
+<a class="next-btn back-btn" (click)="onBack()" style="background-color: white; z-index: 333333; position: fixed;bottom: 40%;margin-left: 4%;">zurück</a>
+<a class="next-btn" (click)="onNext()" style=" z-index: 222222222; position: fixed;bottom:40%;margin-right: 4%;">weiter</a>
+    

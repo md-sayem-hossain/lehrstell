@@ -1,0 +1,80 @@
+<div class="first-step">
+    <div class="motivation-container">
+
+        <div class="row">
+            <div class="col-100">
+                <span class="small-heading grey-color">
+                    Beantworte die Fragen.
+                </span>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-100">
+                <label class="grey-color" style="color: red !important;">
+                    (Wichtig: Du kannst am Schluss den Brief auch als Word herunterladen und den Hauptteil noch selber anpassen). 
+                </label>
+            </div>
+        </div> -->
+        <div class="mb-20"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Wie bist du auf das Stelleninserat aufmerksam geworden und für welche Stelle
+                    möchtest du dich bewerben? (Schreibe in ganzen Sätzen).</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepTwoData2.textArea1" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.lehrStepTwoData2.textArea1PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Was hast du bisher in diesem Beruf gemacht? (Schreibe in ganzen
+                    Sätzen).</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepTwoData2.textArea2" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.lehrStepTwoData2.textArea2PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+
+        <div class="mb-10"></div>
+        <div class="row">
+            <div class="col-100">
+                <label for="fname" class="">Warum passt der Beruf zu dir? Warum möchtest du bei dieser Firma eine Lehrstelle? (Schreibe in ganzen Sätzen).</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <textarea id="description" [(ngModel)]="commonService.lehrStepTwoData2.textArea3" class="col-100"
+                    name="comment-area" rows="5"
+                    placeholder={{commonService.lehrStepTwoData2.textArea3PlaceHolder}}></textarea>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+    </div>
+
+</div>
+<div class="mb-20"></div>
+<!-- 
+<a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" (click)="onNext()">weiter</a> -->
+
+
+<a class="next-btn back-btn" (click)="onBack()" style="background-color: white; z-index: 333333; position: fixed;bottom: 40%;margin-left: 4%;">zurück</a>
+<a class="next-btn" (click)="onNext()" style=" z-index: 222222222; position: fixed;bottom:40.4%;margin-right: 4%;">weiter</a>
+
+
+
+ 
