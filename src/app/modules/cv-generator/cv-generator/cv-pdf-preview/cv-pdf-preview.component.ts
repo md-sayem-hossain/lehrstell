@@ -598,8 +598,7 @@ export class CvPdfPreviewComponent implements OnInit {
         }));
         hobbysParagraph.addChildElement( 
             new TextRun({ 
-                text: `${hobby.name}`,
-           
+                text: `${hobby.name}`, 
         }));
         hobbysParagraph.addChildElement(new TextRun({
             
