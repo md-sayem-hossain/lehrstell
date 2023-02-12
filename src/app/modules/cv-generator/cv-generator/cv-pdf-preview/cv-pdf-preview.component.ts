@@ -21,6 +21,7 @@ import {
     TextWrappingType,
     TextWrappingSide,
     Alignment,
+    Tab,
 } from "docx";
 import { DatePipe } from '@angular/common';
 import { Certificate } from 'crypto';
@@ -572,18 +573,53 @@ export class CvPdfPreviewComponent implements OnInit {
         //     br = 1;
         // });
 
-        this.commonService.hobbys.forEach(hobby => {
-            hobbysParagraph.addChildElement(new TextRun({
+    //     this.commonService.hobbys.forEach(hobby => {
+    //         hobbysParagraph.addChildElement(
+    //             new TextRun({ 
+    //             break: br, 
+    //         }));
+    //         hobbysParagraph.addChildElement( 
+    //             new TextRun({
+    //             text: `${hobby.name}`,  
+    //         }));
+    //         hobbysParagraph.addChildElement(new TextRun({
+    //             text: `\t\t${hobby.description}`
+    //            // text: `${hobby.name?.length >=13 ? '\t' :hobby.name?.length >= 6? '\t\t' : hobby.name?.length <=6 ? '\t\t\t' :  ''}${hobby.description}`
+    //         }));
+    //         br = 1;
+    //     });
+    //     return hobbysParagraph;
+    // }
+
+    this.commonService.hobbys.forEach(hobby => { 
+        hobbysParagraph.addChildElement(
+            new TextRun({ 
+            break: br, 
+        }));
+        hobbysParagraph.addChildElement( 
+            new TextRun({ 
                 text: `${hobby.name}`,
-                break: br
-            }));
-            hobbysParagraph.addChildElement(new TextRun({
-                text: `${hobby.name?.length >=13 ? '\t' :hobby.name?.length >= 6? '\t\t' : hobby.name?.length <=6 ? '\t\t\t' :  ''}${hobby.description}`
-            }));
-            br = 1;
-        });
-        return hobbysParagraph;
-    }
+           
+        }));
+        hobbysParagraph.addChildElement(new TextRun({
+            
+            children: [new Tab(), new Tab(), `${hobby.description}`], 
+            
+           // text: `${hobby.name?.length >=13 ? '\t' :hobby.name?.length >= 6? '\t\t' : hobby.name?.length <=6 ? '\t\t\t' :  ''}${hobby.description}`
+        }));
+        
+        br = 1;
+    });
+    return hobbysParagraph;
+}
+
+
+
+
+
+
+
+
 
     generateSchnupperlehrenParagraph(): Paragraph {
         let schnupperlehrenParagraph = new Paragraph({
