@@ -44,7 +44,7 @@ export class CvPdfPreviewComponent implements OnInit {
             return result['firstname'] + ' (' + result['job'] + ')'
         })
         this.siblingsNamesString = data.join(', ')
-        this.siblingsNamesString = this.siblingsNamesString.replace(' ()', '')
+        this.siblingsNamesString = this.siblingsNamesString.replace(' ', '')
         this.checkingArrayOfObjectEmpty()
     }
     
