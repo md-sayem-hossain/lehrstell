@@ -41,17 +41,11 @@ export class CvPdfPreviewComponent implements OnInit {
 
     ngOnInit(): void {
         let data = this.commonService.siblings.map((result: any) => {
-            if(result['job']==null)
-            {
-                return result['firstname']
-            }
-            else{
-                return result['firstname'] + ' (' + result['job'] + ')'
-            }
-            
+            return result['firstname'] + ' (' + result['job'] + ')'
         })
+        this.siblingsNamesString = this.siblingsNamesString.replace(' ()', '') 
         this.siblingsNamesString = data.join(', ')
-        this.siblingsNamesString = this.siblingsNamesString.replace(' ()', '')
+
         this.checkingArrayOfObjectEmpty()
     }
     
