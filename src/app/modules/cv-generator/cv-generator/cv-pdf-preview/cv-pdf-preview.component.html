@@ -58,7 +58,7 @@
                         <span class="right-side">{{commonService.personalData?.fFirstName +'
                             '+commonService.personalData?.fLastName }}
                             <span *ngIf="commonService.personalData?.fJob">
-                                {{' ('+commonService.personalData?.fJob +')'}}
+                                {{'('+commonService.personalData?.fJob+')'}}
                             </span>
                         </span>
                     </div>
@@ -67,11 +67,11 @@
                         <span class="right-side">
                             {{commonService.personalData?.mFirstName +' '+commonService.personalData?.mLastName }}
                             <span *ngIf="commonService.personalData?.mJob">
-                                {{' ('+commonService.personalData?.mJob +')'}}
+                                {{'('+commonService.personalData?.mJob+')'}}
                             </span>
                         </span>
                     </div>
-                    <div class="line" *ngIf="siblingsNamesString!='( )'">
+                    <div class="line" >
                         <span class="left-side w-30"> Geschwister</span>
                         <span class="right-side" *ngIf="siblings">{{siblingsNamesString }} </span>
                         <span class="right-side" *ngIf="!siblings">Keine Geschwister </span>
