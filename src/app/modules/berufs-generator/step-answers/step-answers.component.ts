@@ -39,12 +39,12 @@ export class StepAnswersComponent implements OnInit {
     this.generateString(); 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
     });
     const body = {
       prompt: this.inputData,
       model: 'text-davinci-002',
-      max_tokens: 20000
+      max_tokens: 800
     };
     this.zone.runOutsideAngular(() => {
       this.http.post('https://api.openai.com/v1/completions', body, { headers })
@@ -73,10 +73,16 @@ export class StepAnswersComponent implements OnInit {
      4. Meine Stärken sind {{staerkenPlaceholder}}
      5. Meine Schwächen sind {{schwaechenPlaceholder}}
      6. Meine Interessen sind {{interessenPlaceholder}}
-     7. Ich arbeite gerne {{arbeitPlaceholder}}
-     
-     Kannst du anhand der Webseiten https://www.berufsberatung.ch , yousty.ch und gatewayone.ch passende Lehrstellen zu meiner Person finden (die fünf passendsten aufführen)? In der Antwort dürfen die Webseiten nicht aufgeführt/erwähnt werden. Die Antwort soll wie folgt sein: Aufgrund deiner Angaben, könnten folgende Lehrberufe zu dir passen: dann jeweils die Berufe und jeweils ein Satz warum dieser zur Person passt (die Berufe fett und aufgezählt 1. 2. 3. 4. 5.)
-     `;
+     7. Ich arbeite gerne {{arbeitPlaceholder}} 
+
+
+    Befolgen Sie diese Anweisung:
+
+    1. Nutze die Webseiten https://www.berufsberatung.ch, yousty.ch und gatewayone.ch, um passende Lehrstellen zu finden
+    2. Listen Sie die 5 am besten geeigneten mit jeweils einer 4-zeiligen Beschreibung auf
+    3. Der Name der Website darf in der Antwort nicht aufgeführt/erwähnt werden
+    4. Die Antwort sollte lauten: "Nach Ihren Angaben könnten folgende Ausbildungsberufe zu Ihnen passen: " und
+    5. Dann erscheinen die Berufe und ein Satz, warum es zu Ihnen passt, in jeweils 3 Zeilen (die Berufe sind fett gedruckt und als 1, 2, 3, 4, 5 aufgeführt).`;
 
      const formattedStringWithValues = formattedString
     .replace('{{schulNiveauPlaceholder}}', this.schoolLevel_str)
