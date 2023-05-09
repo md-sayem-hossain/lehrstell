@@ -88,8 +88,8 @@ export class StepAnswersComponent implements OnInit {
     .replace('{{arbeitPlaceholder}}', this.liketowork_str);
 
     console.log(formattedStringWithValues); 
-    // this.inputData =  formattedStringWithValues; 
-    this.inputData =  'describe dictionary with code in 5 paragraph'; 
+    this.inputData =  formattedStringWithValues; 
+    // this.inputData =  'describe dictionary with code in 5 paragraph'; 
   }
 
   private concatenateStrengths() {
