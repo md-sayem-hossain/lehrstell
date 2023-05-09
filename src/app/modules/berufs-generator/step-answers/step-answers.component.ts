@@ -43,8 +43,7 @@ export class StepAnswersComponent implements OnInit {
     });
     const body = {
       prompt: this.inputData,
-      model: 'text-davinci-002',
-      max_tokens: 4000 
+      model: 'text-davinci-002' 
     };
     this.zone.runOutsideAngular(() => {
       this.http.post('https://api.openai.com/v1/completions', body, { headers })
