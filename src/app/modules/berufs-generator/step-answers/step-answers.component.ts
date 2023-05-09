@@ -104,15 +104,10 @@ export class StepAnswersComponent implements OnInit {
      5. Meine Schwächen sind {{schwaechenPlaceholder}}
      6. Meine Interessen sind {{interessenPlaceholder}}
      7. Ich arbeite gerne {{arbeitPlaceholder}} 
-
-
-    Befolgen Sie diese Anweisung:
-
-    1. Nutze die Webseiten https://www.berufsberatung.ch, yousty.ch und gatewayone.ch, um passende Lehrstellen zu finden
-    2. Listen Sie die 5 am besten geeigneten mit jeweils einer 4-zeiligen Beschreibung auf
-    3. Der Name der Website darf in der Antwort nicht aufgeführt/erwähnt werden
-    4. Die Antwort sollte lauten: "Nach Ihren Angaben könnten folgende Ausbildungsberufe zu Ihnen passen: " und
-    5. Dann erscheinen die Berufe und ein Satz, warum es zu Ihnen passt, in jeweils 3 Zeilen (die Berufe sind fett gedruckt und als 1, 2, 3, 4, 5 aufgeführt).`;
+     
+     Kannst du anhand der Schweizer Lehrstellen-Webseiten  wie z.B. www.berufsberatung.ch , yousty.ch und gatewayone.ch passende Lehrberufe zu meiner Person finden (die fünf passendsten aufführen) - nur EBA oder EFZ Lehren. 
+     In der Antwort dürfen die Webseiten nicht aufgeführt/ erwähnt werden. Die Antwort soll wie folgt sein: Aufgrund deiner Angaben, könnten folgende Lehrberufe zu dir passen: Beruf + jeweils ein Satz warum dieser zur Person passt - es soll nicht mehr aufgeführt werden als dies.
+     Bemerkung: Niveau C - eher EBA Berufe aufführen / Niveau B EFZ und EBA Berufe und Niveau A nur EFZ Berufe.`;
 
      const formattedStringWithValues = formattedString
     .replace('{{schulNiveauPlaceholder}}', this.schoolLevel_str)
