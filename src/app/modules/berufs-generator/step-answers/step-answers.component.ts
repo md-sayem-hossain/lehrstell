@@ -43,7 +43,7 @@ export class StepAnswersComponent implements OnInit {
     });
     const body = {
       prompt: this.inputData,
-      model: 'text-davinci-002' 
+      model: 'text-davinci-002',
       max_tokens: 20000
     };
     this.zone.runOutsideAngular(() => {
