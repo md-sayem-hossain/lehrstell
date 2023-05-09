@@ -34,6 +34,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/bewerbungsgesprach_vorbereiten/bewerbungsgesprach.module')
       .then(m => m.Bewerbungsgesprach),
   },
+  {
+    path: 'berufs-generator', 
+    loadChildren: () => import('./modules/berufs-generator/berufs.module')
+      .then(m => m.BerufsModule),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
   {

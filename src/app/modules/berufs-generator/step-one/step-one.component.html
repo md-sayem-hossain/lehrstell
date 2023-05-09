@@ -1,0 +1,81 @@
+<div class="first-step">  
+    <div class="left-side">
+        <form [formGroup]="berufsForm">
+            <div class="row">
+                <div class="col-7">
+                    <span class="small-heading grey-color">
+                        Seite 1 von 7/ Schulniveau
+                    </span>
+                    <p style="color: #a6a6a6;margin-top: 1rem;width: 100%;">Kreuze an, welches Niveau du mehrheitlich in den Fächern besuchst/ besucht hast und nenne deine Lieblingsschulfächer.</p>
+                </div>
+                <div class="col-5"> 
+                    <img src="assets/images/berufs.jpg" style="width: 15rem;float: right;margin-top: -2rem;" alt="">
+                </div>
+            </div> 
+ 
+
+            <div class="row">
+                <div class="col-1-3">
+                    <span class="small-heading">
+                        Schulniveau
+                    </span>
+                </div> 
+             </div>
+            <div class="row">
+                <div class="col-12">
+                    <p style="color: #a6a6a6; width: 100% !important;">Ich besuche die meisten Fächer im :</p>
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div style="border-bottom: 2px dashed black;border-width: thin;margin-bottom: 20px;">
+                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                            <label for="schoolLevel1">Niveau A</label>
+                            <input type="checkbox" formControlName="schoolLevel1" ngDefaultControl style="background-color: transparent; width: auto; height: auto; border: none; padding-left: 0; color: #292929;
+                            font-family: sans-serif;" id="schoolLevel1" name="schoolLevel1" value="schoolLevel1">
+                        </div> 
+                        <small>(höher Anforderungen)</small>
+                    </div>
+                    <div style="border-bottom: 2px dashed black;border-width: thin;margin-bottom: 20px;">
+                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                            <label for="schoolLevel2">Niveau B</label>
+                            <input type="checkbox" formControlName="schoolLevel2" ngDefaultControl style="background-color: transparent; width: auto; height: auto; border: none; padding-left: 0; color: #292929;
+                            font-family: sans-serif;" id="schoolLevel2" name="schoolLevel2" value="schoolLevel2">
+                        </div> 
+                        <small>(erweiterte Anforderungen)</small>
+                    </div>
+                    <div style="border-bottom: 2px dashed black;border-width: thin;margin-bottom: 20px;">
+                        <div style="display: flex;align-items: center;justify-content: space-between;">
+                            <label for="schoolLevel3">Niveau C</label>
+                            <input type="checkbox" formControlName="schoolLevel3" ngDefaultControl style="background-color: transparent; width: auto; height: auto; border: none; padding-left: 0; color: #292929;
+                            font-family: sans-serif;" id="schoolLevel3" name="schoolLevel3" value="schoolLevel3">
+                        </div> 
+                        <small>(grundlegende Anforderungen)</small>
+                    </div>  
+                </div>
+                <div class="col-6">
+                    <div style="margin: auto;text-align: center;">
+                        <img src="/assets/images/info_icon.jpg" style="width: 45px;" alt="">
+                        <h3 style="font-size: 1.4rem;line-height: 1.4;color: #a6a6a6;font-weight: 300;">Wichtig ist, dass du <br> ehrlich zu dir selbst bist</h3>
+                    </div>
+                </div> 
+            </div>
+             
+             <div class="row">
+                <div class="col-100">
+                    <div class="next_btn">
+                        <a class="next-btn" (click)="onNext()">weiter</a>
+                    </div>
+                </div>
+             </div> 
+        </form> 
+    </div> 
+</div>
+<div class="mb-30"></div>
+
+<!-- <a class="next-btn" (click)="onNext()">weiter</a> -->
+
+   
+ 
+ 

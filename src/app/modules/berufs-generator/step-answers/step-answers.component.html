@@ -1,0 +1,24 @@
+<div class="first-step">  
+    <div class="left-side">  
+        <pre style="overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-radius: 5px;font-size: 14px;height: auto;">
+          {{ response.choices[0].text }}
+        </pre>
+
+        <div class="row">
+          <div class="col-100">
+              <div class="next_btn">
+                  <a class="next-btn back-btn" (click)="onBack()">zurück</a> 
+              </div>
+          </div>
+       </div>  
+    </div>
+</div>
+<div class="mb-60"></div>
+<!-- <a class="next-btn back-btn" (click)="onBack()">zurück</a>
+<a class="next-btn" *ngIf="!showDoneBtn" (click)="onNext()">weiter</a> -->
+
+
+
+     
+
+ 

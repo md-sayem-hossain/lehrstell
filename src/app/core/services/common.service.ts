@@ -27,6 +27,68 @@ export class CommonService {
   public msType = 'lehrstelle' //schnupperlehre
   public schreibst = 'unknown' //schnupperlehre
   public msPersonalForm: any
+
+  public berufsForm: any
+  public subjects = [{ subject1: '', subject2: '', subject3: '', subject4: '' }]
+  public hobbieses = [{ hobbies1: '', hobbies2: '', hobbies3: '', hobbies4: '' }]
+  public schoolLevel = [{ schoolLevel1: '', schoolLevel2: '', schoolLevel3: ''}]
+  public interests = [{ interest1: '', interes2s: '', interest3: '', interest4:''}]
+  public strengths = [{ 
+   strength_1: '',
+   strength_2: '', 
+   strength_3: '',
+   strength_4: '',
+   strength_5: '',
+   strength_6: '',
+   strength_7: '',
+   strength_8: '',
+   strength_9: '',
+   strength_10: '',
+   strength_11: '',
+   strength_12: '',
+   strength_13: '',
+   strength_14: '',
+   strength_15: '',
+   strength_16: ''
+}]
+
+public weaknesses = [{
+  weakness_1: '',
+  weakness_2: '',
+  weakness_3: '',
+  weakness_4: '',
+  weakness_5: '',
+  weakness_6: '',
+  weakness_7: '',
+  weakness_8: '',
+  weakness_9: '',
+  weakness_10: '',
+  weakness_11: '',
+  weakness_12: '',
+  weakness_13: '',
+  weakness_14: '',
+  weakness_15: '',
+  weakness_16: ''
+}]
+public liketoworks = [{
+  liketowork_1: '',
+  liketowork_2: '',
+  liketowork_3: '',
+  liketowork_4: '',
+  liketowork_5: '',
+  liketowork_6: '',
+  liketowork_7: '',
+  liketowork_8: '',
+  liketowork_9: '',
+  liketowork_10: '',
+  liketowork_11: '',
+  liketowork_12: '',
+  liketowork_13: '',
+  liketowork_14: '',
+  liketowork_15: '',
+  liketowork_16: ''
+}]
+
   lehrStepOneData = {
     textArea10: '',
     textArea11: '',
@@ -186,8 +248,8 @@ export class CommonService {
 
   constructor() {
     this.setLocalStorgeDataForCV()
-    this.setLocalStorgeDataForMS()
-
+    this.setLocalStorgeDataForMS() 
+    this.setLocalStorgeDataForBerufs()
   }
 
   initAllData() {
@@ -203,12 +265,75 @@ export class CommonService {
     ];
     this.trailApprentice = [{ von: '', bis: '', beruf: '', firma: '', ort: '' }]
     this.references = [{ firstName: '', lastName: '', email: '', mobile: '', function: '' }]
+    
+    this.subjects = [{ subject1: '', subject2: '', subject3: '', subject4: '' }]
+    this.hobbieses = [{ hobbies1: '', hobbies2: '', hobbies3: '', hobbies4: '' }]
+    this.schoolLevel = [{ schoolLevel1: '', schoolLevel2: '', schoolLevel3: ''}]
+    this.interests = [{ interest1: '', interes2s: '', interest3: '', interest4:''}]
+
+    this.strengths = [{ 
+      strength_1: '',
+      strength_2: '', 
+      strength_3: '',
+      strength_4: '',
+      strength_5: '',
+      strength_6: '',
+      strength_7: '',
+      strength_8: '',
+      strength_9: '',
+      strength_10: '',
+      strength_11: '',
+      strength_12: '',
+      strength_13: '',
+      strength_14: '',
+      strength_15: '',
+      strength_16: ''
+   }]
+   
+   this.weaknesses = [{
+     weakness_1: '',
+     weakness_2: '',
+     weakness_3: '',
+     weakness_4: '',
+     weakness_5: '',
+     weakness_6: '',
+     weakness_7: '',
+     weakness_8: '',
+     weakness_9: '',
+     weakness_10: '',
+     weakness_11: '',
+     weakness_12: '',
+     weakness_13: '',
+     weakness_14: '',
+     weakness_15: '',
+     weakness_16: ''
+   }]
+   this.liketoworks = [{
+     liketowork_1: '',
+     liketowork_2: '',
+     liketowork_3: '',
+     liketowork_4: '',
+     liketowork_5: '',
+     liketowork_6: '',
+     liketowork_7: '',
+     liketowork_8: '',
+     liketowork_9: '',
+     liketowork_10: '',
+     liketowork_11: '',
+     liketowork_12: '',
+     liketowork_13: '',
+     liketowork_14: '',
+     liketowork_15: '',
+     liketowork_16: ''
+   }]
+   
     this.impressumContent = ''
 
     //=========== Generate motivation-sschreiben Section ===================//
     this.msStep = 1
     this.msType = 'lehrstelle'
-    this.msPersonalForm = []
+    this.msPersonalForm = [] 
+    this.berufsForm = []  
     this.lehrStepTwoData = {
       textArea1: '',
       textArea2: '',
@@ -411,6 +536,42 @@ export class CommonService {
     }
   }
 
+  setLocalStorgeDataForBerufs() {
+    let berufsForm = localStorage.getItem('berufsForm')
+    if (berufsForm) {
+      this.berufsForm = JSON.parse(berufsForm)
+    }
+
+    let subjects = localStorage.getItem('subjects')
+    if (subjects) {
+      this.subjects = JSON.parse(subjects)
+    }  
+    let schoolLevel = localStorage.getItem('schoolLevel')
+    if (schoolLevel) {
+      this.schoolLevel = JSON.parse(schoolLevel)
+    }
+    let hobbieses = localStorage.getItem('hobbieses')
+    if (hobbieses) {
+      this.hobbieses = JSON.parse(hobbieses)
+    } 
+    let strengths = localStorage.getItem('strengths')
+    if (strengths) {
+      this.strengths = JSON.parse(strengths)
+    }
+    let weaknesses = localStorage.getItem('weaknesses')
+    if (weaknesses) {
+      this.weaknesses = JSON.parse(weaknesses)
+    }
+    let liketoworks = localStorage.getItem('liketoworks')
+    if (liketoworks) {
+      this.liketoworks = JSON.parse(liketoworks)
+    }
+    let interests = localStorage.getItem('interests')
+    if (interests) {
+      this.interests = JSON.parse(interests)
+    }
+  } 
+
   setLocalStorgeDataForMS() {
     let msStep = localStorage.getItem('msStep')
     if (msStep) {
@@ -455,16 +616,7 @@ export class CommonService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
+ 
 
 
     //sayem

@@ -10,6 +10,8 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de-CH';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BerufswahlUnterrichtsmaterialComponent } from './modules/shared/components/berufswahl-unterrichtsmaterial/berufswahl-unterrichtsmaterial.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 registerLocaleData(localeDe);
 @NgModule({
@@ -17,13 +19,13 @@ registerLocaleData(localeDe);
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BerufswahlUnterrichtsmaterialComponent,
-
+    BerufswahlUnterrichtsmaterialComponent,  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule 
   ],
   providers: [CommonService, { provide: LOCALE_ID, useValue: 'de-ch' }],
   bootstrap: [AppComponent]
