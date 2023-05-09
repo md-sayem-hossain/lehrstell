@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BerufswahlUnterrichtsmaterialComponent } from './modules/shared/components/berufswahl-unterrichtsmaterial/berufswahl-unterrichtsmaterial.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 registerLocaleData(localeDe);
 @NgModule({
   declarations: [

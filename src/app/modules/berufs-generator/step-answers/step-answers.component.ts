@@ -1,7 +1,9 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { CommonService } from 'src/app/core/services/common.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
- 
+import { AES, enc } from 'crypto-js';
+
+
 @Component({
   selector: 'app-step-answers',
   templateUrl: './step-answers.component.html',
@@ -20,14 +22,41 @@ export class StepAnswersComponent implements OnInit {
   liketowork_str: string = '';
   concatenatedStrengths: string = '';
 
+
+  // plaintext: string = 'Bearer keyhere';
+  plaintext: string = 'U2FsdGVkX19VI4HYzj9Z8h64/YuduxBNy4J94MLsy4Hf83vALwcsjJ712SAZ9BaVIOO5YDhqdwn91JsYsjBnUpxC/2oDZwK4fNnBPsBMUAs=';
+  secretKey: string = 'shs';
+  newstring: string = '';
+  
   constructor(public commonService: CommonService , private http: HttpClient,private zone: NgZone) { }
 
   ngOnInit(): void { 
-    this.submit();   
+    this.submit();
   }  
+  
+  // encryptText(plaintext: string, secretKey: string): string {
+  //   const encryptedText = AES.encrypt(plaintext, secretKey).toString();
+  //   return encryptedText;
+  // }
+  decryptText(encryptedText: string, secretKey: string): string {
+    const decryptedText = AES.decrypt(encryptedText, secretKey).toString(enc.Utf8);
+    return decryptedText;
+  }
   
  
   submit() {
+
+     //    // Encrypt the plaintext
+  // const encryptedText = this.encryptText(this.plaintext, this.secretKey);
+  // console.log('Encrypted:', encryptedText);
+
+  // Decrypt the encrypted text
+  const decryptedText = this.decryptText(this.plaintext, this.secretKey);
+  console.log('Decrypted:', decryptedText);
+  this.newstring = decryptedText;
+
+
+
     this.concatenateStrengths();
     this.concatenateHobbies();
     this.concatenateInterest();
@@ -37,9 +66,10 @@ export class StepAnswersComponent implements OnInit {
     this.concatenateWeekness(); 
 
     this.generateString(); 
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer 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',
+       Authorization: this.newstring,
     });
     const body = {
       prompt: this.inputData,
