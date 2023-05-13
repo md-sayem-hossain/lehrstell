@@ -108,7 +108,7 @@ export class StepSixComponent implements OnInit {
       liketowork_11:[data?.liketowork_11? "Ich telefoniere gerne" :'', Validators.required],
       liketowork_12:[data?.liketowork_12? "Ich arbeite gerne mit Maschinen" :'', Validators.required],
       liketowork_13:[data?.liketowork_13? "Ich arbeite gerne kreativ und gestalterisch" :'', Validators.required],
-      liketowork_14:[data?.liketowork_14? "Ich arbeite gerne mit Maschinen" :'', Validators.required]
+      liketowork_14:[data?.liketowork_14? "Kalte Temperaturen machen mir nichts aus" :'', Validators.required]
       
 
     });
@@ -187,14 +187,14 @@ export class StepSixComponent implements OnInit {
 }
 
   onNext() {
-    this.commonService.msStep = 7
+    this.commonService.msStep = 8
     this.commonService.berufsForm = this.berufsForm.value;
     localStorage.setItem('berufsForm', JSON.stringify(this.berufsForm.value));
     localStorage.setItem('weaknesses', JSON.stringify(this.commonService.weaknesses));
     console.log(this.berufsForm.value); 
   }
   onBack() {
-    this.commonService.msStep = 5
+    this.commonService.msStep = 6
     localStorage.setItem('msStep', JSON.stringify(this.commonService.msStep))
   }
  

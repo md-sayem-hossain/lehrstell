@@ -95,7 +95,7 @@ export class StepAnswersComponent implements OnInit {
     //  console.log(this.liketowork_str);  
 
      const formattedString = `
-     Ich suche eine passende Lehrstelle (die zu meiner Person passt). Folgende Dinge kann ich über mich sagen:
+    Ich suche passende Lehrberufe EFZ oder EBA, die zu meiner Person passen. Folgende Dinge kann ich über mich sagen:
      
      1. Ich gehe ins Schuliveau {{schulNiveauPlaceholder}}
      2. Meine Lieblingsfächer sind {{lieblingsFaecherPlaceholder}}
@@ -105,9 +105,14 @@ export class StepAnswersComponent implements OnInit {
      6. Meine Interessen sind {{interessenPlaceholder}}
      7. Ich arbeite gerne {{arbeitPlaceholder}} 
      
-     Kannst du anhand der Schweizer Lehrstellen-Webseiten  wie z.B. www.berufsberatung.ch , yousty.ch und gatewayone.ch passende Lehrberufe zu meiner Person finden (die fünf passendsten aufführen) - nur EBA oder EFZ Lehren. 
-     In der Antwort dürfen die Webseiten nicht aufgeführt/ erwähnt werden. Die Antwort soll wie folgt sein: Aufgrund deiner Angaben, könnten folgende Lehrberufe zu dir passen: Beruf + jeweils ein Satz warum dieser zur Person passt - es soll nicht mehr aufgeführt werden als dies.
-     Bemerkung: Niveau C - eher EBA Berufe aufführen / Niveau B EFZ und EBA Berufe und Niveau A nur EFZ Berufe.`;
+    Kannst du anhand der Schweizer Lehrstellen-Webseiten wie z.B. www.berufsberatung.ch. passende Lehrstellen EBA oder EFZ zu meiner Person finden (die fünf passendsten nummeriert aufführen) - nur EBA oder EFZ Lehrberufe aufführen.
+    In der Antwort dürfen die Webseiten nicht aufgeführt/ erwähnt werden. Die Antwort soll wie folgt sein: Aufgrund deiner Angaben, könnten folgende Lehrberufe zu dir passen:
+    Beruf ( EBA-Lehrstelle oder EFZ-Lehrstelle) + jeweils ein Satz warum dieser zur Person passt.
+    Keine weiteren Texte aufführen (nur Berufsbezeichnung und ein kurzer Satz).
+    Bemerkung zur Suche: Wenn Schulniveau C (grundlegende Anforderungen) in der Antwort nur  EBA-Lehrberufe/Lehrstellen aufführen (da schwächere Schülerinnen und Schüler / Niveau B EFZ-Lehrberufe und EBA Lehrberufe und Niveau A nur EFZ Lehrberufe anzeigen. Das ß in einem Wort als ss im Wort schreiben.
+
+    Schlusssatz exakt so aufführen am Schluss: Diese generierten Vorschläge ersetzen keine professionelle Berufsberatung.
+    Besprich die Liste mit deiner Lehrperson und finde heraus, ob die Lehrberufe zu dir passen!`;
 
      const formattedStringWithValues = formattedString
     .replace('{{schulNiveauPlaceholder}}', this.schoolLevel_str)
@@ -203,7 +208,7 @@ export class StepAnswersComponent implements OnInit {
 
 
   onBack() {
-    this.commonService.msStep = 7;
+    this.commonService.msStep = 10;
     localStorage.setItem('msStep', JSON.stringify(this.commonService.msStep));
   }
 }

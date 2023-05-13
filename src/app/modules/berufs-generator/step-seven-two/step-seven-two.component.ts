@@ -4,11 +4,11 @@ import { CommonService } from 'src/app/core/services/common.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-step-seven',
-  templateUrl: './step-seven.component.html',
-  styleUrls: ['./step-seven.component.scss']
+  selector: 'app-step-seven-two',
+  templateUrl: './step-seven-two.component.html',
+  styleUrls: ['./step-seven-two.component.scss']
 })
-export class StepSevenComponent implements OnInit {
+export class StepSevenTwoComponent implements OnInit {
   berufsForm!: FormGroup;
   showDoneBtn = false;
 
@@ -190,7 +190,8 @@ export class StepSevenComponent implements OnInit {
    
 
   onNext() {
-    this.commonService.msStep = 10 
+    this.commonService.msStep = 11
+
     this.commonService.berufsForm = this.berufsForm.value;
     localStorage.setItem('berufsForm', JSON.stringify(this.berufsForm.value));
     localStorage.setItem('liketoworks', JSON.stringify(this.commonService.liketoworks));
@@ -198,7 +199,7 @@ export class StepSevenComponent implements OnInit {
 
   }
   onBack() {
-    this.commonService.msStep = 8
+    this.commonService.msStep = 9
     localStorage.setItem('msStep', JSON.stringify(this.commonService.msStep))
   }
 }

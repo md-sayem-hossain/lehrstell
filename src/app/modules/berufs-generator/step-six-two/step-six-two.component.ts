@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from 'src/app/core/services/common.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-step-seven',
-  templateUrl: './step-seven.component.html',
-  styleUrls: ['./step-seven.component.scss']
+  selector: 'app-step-six-two',
+  templateUrl: './step-six-two.component.html',
+  styleUrls: ['./step-six-two.component.scss']
 })
-export class StepSevenComponent implements OnInit {
+export class StepSixTwoComponent implements OnInit {
   berufsForm!: FormGroup;
   showDoneBtn = false;
 
-  constructor(public commonService: CommonService, private _formBuilder: FormBuilder,private router: Router) { }
+  constructor(public commonService: CommonService, private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     let berufsForm = this.commonService.berufsForm;
@@ -187,18 +186,18 @@ export class StepSevenComponent implements OnInit {
   }
 }
 
-   
-
   onNext() {
-    this.commonService.msStep = 10 
+    this.commonService.msStep = 9
     this.commonService.berufsForm = this.berufsForm.value;
     localStorage.setItem('berufsForm', JSON.stringify(this.berufsForm.value));
-    localStorage.setItem('liketoworks', JSON.stringify(this.commonService.liketoworks));
-    console.log(this.berufsForm.value);  
-
+    localStorage.setItem('weaknesses', JSON.stringify(this.commonService.weaknesses));
+    console.log(this.berufsForm.value); 
   }
   onBack() {
-    this.commonService.msStep = 8
+    this.commonService.msStep = 7
     localStorage.setItem('msStep', JSON.stringify(this.commonService.msStep))
   }
+ 
+
+
 }

@@ -109,7 +109,7 @@ export class StepOneComponent implements OnInit {
       liketowork_11:[data?.liketowork_11? "Ich telefoniere gerne" :'', Validators.required],
       liketowork_12:[data?.liketowork_12? "Ich arbeite gerne mit Maschinen" :'', Validators.required],
       liketowork_13:[data?.liketowork_13? "Ich arbeite gerne kreativ und gestalterisch" :'', Validators.required],
-      liketowork_14:[data?.liketowork_14? "Ich arbeite gerne mit Maschinen" :'', Validators.required]
+      liketowork_14:[data?.liketowork_14? "Kalte Temperaturen machen mir nichts aus" :'', Validators.required]
       
 
     });

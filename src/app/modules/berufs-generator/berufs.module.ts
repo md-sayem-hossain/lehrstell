@@ -10,6 +10,11 @@ import { StepFourComponent } from './step-four/step-four.component';
 import { StepFiveComponent } from './step-five/step-five.component';
 import { StepSixComponent } from './step-six/step-six.component';
 import { StepSevenComponent } from './step-seven/step-seven.component'; 
+
+import { StepFiveTwoComponent } from './step-five-two/step-five-two.component';
+import { StepSixTwoComponent } from './step-six-two/step-six-two.component';
+import { StepSevenTwoComponent } from './step-seven-two/step-seven-two.component'; 
+
 import { StepAnswersComponent } from './step-answers/step-answers.component';
 
 import { BerufsGeneratorComponent } from './berufs-generator.component';
@@ -25,7 +30,10 @@ import { BerufsGeneratorComponent } from './berufs-generator.component';
     StepFiveComponent,
     StepSixComponent,
     StepSevenComponent, 
-    StepAnswersComponent
+    StepAnswersComponent,
+    StepFiveTwoComponent,
+    StepSixTwoComponent,
+    StepSevenTwoComponent
   ],
   imports: [
     CommonModule,
