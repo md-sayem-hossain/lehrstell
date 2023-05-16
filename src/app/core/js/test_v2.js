@@ -192,7 +192,7 @@ function CloseModal() {
   document.getElementById("b").style.display = "none";
 }
 
-
+ 
 // function DownloadFunction() {
 //   setTimeout(function() {
 //     $('#CloseBTN').trigger('click');
@@ -220,8 +220,7 @@ function displayCounter() {
   }
 }
 window.onload = function () {
-  displayCounter();
-
+  displayCounter(); 
 }
 
 

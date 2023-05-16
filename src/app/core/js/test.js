@@ -193,7 +193,7 @@ function CloseModal() {
   document.getElementById("a").style.display = "none";
   document.getElementById("b").style.display = "none";  
 }
-
+ 
 
 // function DownloadFunction() {
 //   setTimeout(function() {

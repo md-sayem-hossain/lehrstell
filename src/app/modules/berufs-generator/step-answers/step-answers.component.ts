@@ -32,7 +32,12 @@ export class StepAnswersComponent implements OnInit {
 
   ngOnInit(): void { 
     this.submit();
-  }  
+    this.hideAnimatedDiv();
+  }
+
+  hideAnimatedDiv() {
+   
+ }
   
   // encryptText(plaintext: string, secretKey: string): string {
   //   const encryptedText = AES.encrypt(plaintext, secretKey).toString();
@@ -84,6 +89,17 @@ export class StepAnswersComponent implements OnInit {
           });
         });
     });
+
+     let animatedDiv = document.getElementById('scroll-animation');
+    if(animatedDiv !=null){
+      animatedDiv.style.display = 'block';
+      setTimeout(() => {
+        console.log('hide'); 
+          if(animatedDiv !=null){
+            animatedDiv.style.display = 'none';
+          } 
+      }, 12000);
+    } 
   }
   generateString(){
     //  console.log(this.schoolLevel_str);

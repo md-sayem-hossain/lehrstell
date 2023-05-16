@@ -1,5 +1,12 @@
 <div class="first-step">  
-    <div class="left-side">  
+    <div class="left-side"> 
+        <div class="scroll-animation-wrapper">
+            <div id="scroll-animation" class="scroll-animation" style="margin: auto; text-align: center;"> 
+                <h3>Bitte warte 10 Sekunden - der Berufs-Generator sucht passende Lehrberufe.</h3>
+                <img src="assets/images/Spinner.gif" style="width: 100px !important" alt="" >
+            </div>
+          </div>
+        
         <pre style="font-family: 'roboto', san-sarif;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-radius: 5px;font-size: 14px;height: auto;">
           {{ response.choices[0].text }}
         </pre>
@@ -18,7 +25,5 @@
 <a class="next-btn" *ngIf="!showDoneBtn" (click)="onNext()">weiter</a> -->
 
 
-
-     
 
  
